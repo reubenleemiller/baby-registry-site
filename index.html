@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Registry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body class="locked">
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
+  <header>
+    <h1>Baby Registry</h1>
+    <p>Thank you for helping us prepare for our little one!</p>
+  </header>
+
+  <section class="registry">
+    <div class="item">
+      <!-- Example Amazon Embed Placeholder -->
+      <iframe src="https://rcm-na.amazon-adsystem.com/e/cm?t=yourtag-20&o=1&p=48&l=ur1&category=babyproducts&banner=1H0B7DQR2HJ4P1T8K4R2&f=ifr" width="120" height="240" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+      <a href="https://www.amazon.com/dp/B08XYZ123" target="_blank">View Stroller on Amazon</a>
+    </div>
+    <!-- Add more registry items below -->
+  </section>
+
+  <section class="goal-section">
+    <h2>🎁 Contribute to Our Stroller Fund</h2>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="amount-text" id="amountText">$0 of $346.49 goal</div>
+    <input type="number" id="donationAmount" class="donation-input" placeholder="Enter amount (CAD)" min="1">
+    <br>
+    <button class="donate-button" onclick="handleDonate('stripe')">Contribute via Stripe</button>
+    <button class="donate-button" onclick="handleDonate('paypal')">Contribute via PayPal</button>
+  </section>
+<script src="scripts/preloader.js"></script>
+<script src="scripts/payment.js"></script>
+</body>
+</html>
