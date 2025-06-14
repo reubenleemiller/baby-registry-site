@@ -581,7 +581,7 @@ function redirectToDonate() {
   const amount = document.getElementById("donationAmount").value;
   if (amount && amount > 0) {
     const base = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
-    window.location.href = `${base}/baby-registry-site/pages/donate.html?amount=${encodeURIComponent(amount)}`;
+    window.location.href = `${base}/pages/donate.html?amount=${encodeURIComponent(amount)}`;
   } else {
     alert("Please enter a valid amount");
   }
