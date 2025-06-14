@@ -20,33 +20,48 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
+    // Call backend to create a PaymentIntent
     const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: Number(amount) })
     });
 
-    if (!res.ok) throw new Error("Failed to fetch payment intent");
+    if (!res.ok) {
+      throw new Error("Failed to fetch payment intent");
+    }
 
     const { clientSecret } = await res.json();
 
+    // Initialize Stripe
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
     elements = stripe.elements({ clientSecret });
 
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
 
+    // Handle form submission
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Dynamically get repo name (2nd segment in path)
-      const pathParts = window.location.pathname.split('/');
-      const repo = pathParts[1]; // "baby-registry-site"
-      const returnUrl = `${window.location.origin}/${repo}/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
+      const email = document.getElementById("donorEmail").value.trim();
+      if (!email) {
+        document.getElementById("error-message").textContent = "Please enter your email to receive a receipt.";
+        return;
+      }
+
+      const returnUrl = `${window.location.origin}/baby-registry-site/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
 
       const { error } = await stripe.confirmPayment({
         elements,
-        confirmParams: { return_url: returnUrl }
+        confirmParams: {
+          return_url: returnUrl,
+          payment_method_data: {
+            billing_details: {
+              email: email
+            }
+          }
+        }
       });
 
       if (error) {

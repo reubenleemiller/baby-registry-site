@@ -22,13 +22,12 @@
 
   <section class="donation-section">
     <form id="payment-form">
-      <p id="donationDisplay" style="font-weight: bold; margin-bottom: 1rem;"></p>
+      <p id="donationDisplay" class="donation-amount-label"></p>
+      <input type="email" id="donorEmail" placeholder="Email for receipt (required)" class="donation-input" required />
       <div id="payment-element"></div>
       <button id="submit" class="donate-button">Submit Donation</button>
-      <div id="error-message" style="color: red; margin-top: 1rem;"></div>
+      <div id="error-message"></div>
     </form>
-
-    <a href="../index.html" class="donate-button" style="text-decoration: none; margin-top: 1.5rem; display: inline-block;">← Return to Homepage</a>
   </section>
 
   <script src="../scripts/donation.js"></script>
