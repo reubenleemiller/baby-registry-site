@@ -20,34 +20,29 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    // Call Vercel backend to create PaymentIntent
     const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: Number(amount) }) // in CAD
+      body: JSON.stringify({ amount: Number(amount) })
     });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch payment intent");
-    }
+    if (!res.ok) throw new Error("Failed to fetch payment intent");
 
     const { clientSecret } = await res.json();
 
-    // Initialize Stripe
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
     elements = stripe.elements({ clientSecret });
 
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
 
-    // Handle form submission
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Dynamically get the correct base path for GitHub Pages
+      // Dynamically get repo name (2nd segment in path)
       const pathParts = window.location.pathname.split('/');
-      const basePath = '/' + pathParts[1]; // e.g. "/baby-registry-site"
-      const returnUrl = `${window.location.origin}${basePath}/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
+      const repo = pathParts[1]; // "baby-registry-site"
+      const returnUrl = `${window.location.origin}/${repo}/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
 
       const { error } = await stripe.confirmPayment({
         elements,
