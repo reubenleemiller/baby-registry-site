@@ -1,8 +1,0 @@
-[build]
-  publish = "."       # Serve everything from the root, including index.html, assets/, scripts/
-  command = ""        # No build command needed
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

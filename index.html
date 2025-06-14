@@ -572,10 +572,20 @@
   <div class="amount-text" id="amountText">$0 of $346.49 goal</div>
   <input type="number" id="donationAmount" class="donation-input" placeholder="Enter amount (CAD)" min="1">
   <br>
-  <button class="donate-button" onclick="handleDonate('stripe')">Contribute via Stripe</button>
+  <button class="donate-button" onclick="redirectToDonate()">Contribute via Stripe</button>
   <button class="donate-button" onclick="handleDonate('paypal')">Contribute via PayPal</button>
 </section>
 
+<script>
+function redirectToDonate() {
+  const amount = document.getElementById("donationAmount").value;
+  if (amount && amount > 0) {
+    window.location.href = `/pages/donate.html?amount=${encodeURIComponent(amount)}`;
+  } else {
+    alert("Please enter a valid amount");
+  }
+}
+</script>
 <script src="scripts/preloader.js"></script>
 <script src="scripts/payment.js"></script>
 <script src="scripts/update.js"></script>
