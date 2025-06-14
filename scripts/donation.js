@@ -40,12 +40,18 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const email = document.getElementById("email").value.trim();
+      const emailInput = document.getElementById("email");
+      const email = emailInput.value.trim();
       const firstName = document.getElementById("firstName").value.trim();
       const lastName = document.getElementById("lastName").value.trim();
 
       if (!email) {
         document.getElementById("error-message").textContent = "Email is required.";
+        return;
+      }
+
+      if (!emailInput.checkValidity()) {
+        document.getElementById("error-message").textContent = "Please use a valid email address format.";
         return;
       }
 
