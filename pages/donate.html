@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contribute to the Stroller Fund</title>
-  <link href="../assets/style.css" rel="stylesheet" />
+  <link href="../assets/style.css" rel="stylesheet">
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
@@ -22,20 +22,18 @@
 
   <section class="donation-section">
     <form id="payment-form">
-      <div id="donationDisplay" class="donation-display"></div>
+      <div id="donationDisplay" class="donation-amount-display"></div>
 
-      <!-- Email input -->
       <label for="email">Email (for receipt):</label>
       <input type="email" id="email" name="email" required />
 
-      <!-- Stripe will inject the form here -->
       <div id="payment-element"></div>
 
       <button id="submit" class="donate-button">Submit Donation</button>
-      <div id="error-message" class="error-message"></div>
+      <div id="error-message"></div>
     </form>
   </section>
 
-  <script src="../scripts/donation.js"></script>
+  <script src="../scripts/donation.js" defer></script>
 </body>
 </html>
