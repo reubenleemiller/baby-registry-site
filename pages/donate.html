@@ -23,15 +23,13 @@
 
   <section class="donation-section">
   <form id="payment-form">
-    <div id="donationDisplay" class="donation-amount-text"></div>
+    <div id="donationDisplay"></div>
 
-    <!-- Stripe-managed Email element -->
-    <label for="email-element">Email (for receipt):</label>
-    <div id="email-element" class="donation-email"></div>
+    <!-- Email input for receipt -->
+    <label for="email">Email (for receipt):</label>
+    <input type="email" id="email" name="email" required />
 
-    <!-- Stripe Payment Element -->
     <div id="payment-element"></div>
-
     <button id="submit" class="donate-button">Submit Donation</button>
     <div id="error-message"></div>
   </form>

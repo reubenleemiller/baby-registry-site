@@ -1,3 +1,4 @@
+
 // scripts/donation.js
 
 let stripe;
@@ -7,6 +8,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const amount = queryParams.get("amount");
 
+  // Display donation amount
   const donationDisplay = document.getElementById("donationDisplay");
   if (donationDisplay) {
     donationDisplay.textContent = `Donation Amount: $${amount} CAD`;
@@ -19,34 +21,41 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
+    // Call Vercel backend to create PaymentIntent
     const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: Number(amount) })
+      body: JSON.stringify({ amount: Number(amount) }) // in CAD
     });
 
-    if (!res.ok) throw new Error("Failed to fetch payment intent");
+    if (!res.ok) {
+      throw new Error("Failed to fetch payment intent");
+    }
+
     const { clientSecret } = await res.json();
 
+    // Initialize Stripe
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
     elements = stripe.elements({ clientSecret });
-
-    const emailElement = elements.create("email");
-    emailElement.mount("#email-element");
 
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
 
+    // Handle form submission
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const pathParts = window.location.pathname.split('/');
-      const basePath = '/' + pathParts[1]; // /baby-registry-site
-      const returnUrl = `${window.location.origin}${basePath}/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
+      const emailInput = document.getElementById("email");
+      const receiptEmail = emailInput?.value;
+
+      const returnUrl = `${window.location.origin}/baby-registry-site/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
 
       const { error } = await stripe.confirmPayment({
         elements,
-        confirmParams: { return_url: returnUrl }
+        confirmParams: {
+          return_url: returnUrl,
+          receipt_email: receiptEmail
+        }
       });
 
       if (error) {
