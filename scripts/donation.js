@@ -7,6 +7,12 @@ window.addEventListener("DOMContentLoaded", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const amount = queryParams.get("amount");
 
+  // Display donation amount
+  const donationDisplay = document.getElementById("donationDisplay");
+  if (donationDisplay) {
+    donationDisplay.textContent = `Donation Amount: $${amount} CAD`;
+  }
+
   if (!amount || isNaN(amount) || Number(amount) <= 0) {
     document.getElementById("error-message").textContent = "Invalid donation amount.";
     document.getElementById("submit").disabled = true;
@@ -21,6 +27,10 @@ window.addEventListener("DOMContentLoaded", async () => {
       body: JSON.stringify({ amount: Number(amount) }) // in CAD
     });
 
+    if (!res.ok) {
+      throw new Error("Failed to fetch payment intent");
+    }
+
     const { clientSecret } = await res.json();
 
     // Initialize Stripe
@@ -34,13 +44,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const base = window.location.origin + window.location.pathname.replace(/\/pages\/donate.html$/, '');
+      const returnUrl = `${window.location.origin}/baby-registry-site/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
 
       const { error } = await stripe.confirmPayment({
         elements,
-        confirmParams: {
-          return_url: `${base}/baby-registry-site/pages/donation-success.html?amount=${amount}`
-        }
+        confirmParams: { return_url: returnUrl }
       });
 
       if (error) {
