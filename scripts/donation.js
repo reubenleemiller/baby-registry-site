@@ -44,7 +44,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const returnUrl = `${window.location.origin}/baby-registry-site/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
+      // Dynamically get the correct base path for GitHub Pages
+      const pathParts = window.location.pathname.split('/');
+      const basePath = '/' + pathParts[1]; // e.g. "/baby-registry-site"
+      const returnUrl = `${window.location.origin}${basePath}/pages/donation-success.html?amount=${encodeURIComponent(amount)}`;
 
       const { error } = await stripe.confirmPayment({
         elements,
