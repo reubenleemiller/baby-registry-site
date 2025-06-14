@@ -4,10 +4,9 @@ let elements;
 window.addEventListener("DOMContentLoaded", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const amount = queryParams.get("amount");
-
-  // Show amount
   const donationDisplay = document.getElementById("donationDisplay");
-  if (donationDisplay && amount) {
+
+  if (donationDisplay) {
     donationDisplay.textContent = `Donation Amount: $${amount} CAD`;
   }
 
@@ -17,12 +16,14 @@ window.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // Form listener after DOM loaded
   const form = document.getElementById("payment-form");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const email = document.getElementById("email").value.trim();
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       document.getElementById("error-message").textContent = "Please enter a valid email address.";
       return;
@@ -32,10 +33,11 @@ window.addEventListener("DOMContentLoaded", async () => {
       const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: Number(amount), email })
+        body: JSON.stringify({ amount: Number(amount), email, firstName, lastName })
       });
 
       if (!res.ok) throw new Error("Failed to create payment intent");
+
       const { clientSecret } = await res.json();
 
       stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
@@ -53,6 +55,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       if (error) {
         document.getElementById("error-message").textContent = error.message;
       }
+
     } catch (err) {
       console.error("Stripe init error:", err);
       document.getElementById("error-message").textContent = "Failed to load payment form.";

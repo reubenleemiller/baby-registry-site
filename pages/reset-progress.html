@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reset Progress</title>
+  </head>
+  <body>
+    <h2>Reset Donation Progress</h2>
+    <button onclick="resetProgress()">Reset Now</button>
+    <p id="result"></p>
+
+    <script>
+      async function resetProgress() {
+        const res = await fetch("https://baby-registry-backend.vercel.app/api/reset-progress", {
+          method: "POST"
+        });
+        const data = await res.json();
+        document.getElementById("result").innerText = data.message || "Done.";
+      }
+    </script>
+  </body>
+</html>

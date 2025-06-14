@@ -22,18 +22,23 @@
 
   <section class="donation-section">
     <form id="payment-form">
-      <div id="donationDisplay" class="donation-amount-display"></div>
+      <div id="donationDisplay"></div>
+
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required class="stripe-style" />
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required class="stripe-style" />
 
       <label for="email">Email (for receipt):</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" required class="stripe-style" />
 
       <div id="payment-element"></div>
-
       <button id="submit" class="donate-button">Submit Donation</button>
       <div id="error-message"></div>
     </form>
   </section>
 
-  <script src="../scripts/donation.js" defer></script>
+  <script src="../scripts/donation.js"></script>
 </body>
 </html>
