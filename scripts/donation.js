@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${base}/pages/donation-success.html?amount=${amount}`
+          return_url: `${base}/baby-registry-site/pages/donation-success.html?amount=${amount}`
         }
       });
 
