@@ -229,3 +229,17 @@ section > h1 {
     height: 60px;
   }
 }
+.donation-section form label,
+.donation-section form input {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+#email, #firstName, #lastName {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+}
