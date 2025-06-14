@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       const lastName = document.getElementById("lastName").value.trim();
 
       if (!email) {
-        document.getElementById("error-message").textContent = "Please enter your email address.";
+        document.getElementById("error-message").textContent = "Email is required.";
         return;
       }
 
