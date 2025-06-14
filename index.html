@@ -564,50 +564,7 @@
   </div>
 </section>
 
-<section class="goal-section">
-  <h2>Contribute to Our Stroller Fund</h2>
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-  <div class="amount-text" id="amountText">$0 of $346.49 goal</div>
-
-  <input type="number" id="donationAmount" class="donation-input" placeholder="Enter amount (CAD)" min="1">
-  <br>
-  <button class="donate-button" onclick="redirectToDonate()">Contribute via Stripe</button>
-  <button class="donate-button" onclick="handleDonate('paypal')">Contribute via PayPal</button>
-</section>
-
-<script>
-function redirectToDonate() {
-  const amount = document.getElementById("donationAmount").value;
-  if (amount && amount > 0) {
-    const pathParts = window.location.pathname.split('/');
-    const repo = pathParts[1]; // e.g., "baby-registry-site"
-    window.location.href = `${window.location.origin}/${repo}/pages/donate.html?amount=${encodeURIComponent(amount)}`;
-  } else {
-    alert("Please enter a valid amount");
-  }
-}
-
-async function fetchDonationProgress() {
-  try {
-    const res = await fetch("https://baby-registry-backend.vercel.app/api/get-donation-total");
-    const { total } = await res.json();
-    const goal = 346.49;
-    const percent = Math.min((total / goal) * 100, 100);
-
-    document.getElementById('progressBar').style.width = percent + '%';
-    document.getElementById('amountText').textContent = `$${total.toFixed(2)} of $${goal} goal`;
-  } catch (err) {
-    console.error("⚠️ Failed to fetch donation progress:", err.message);
-  }
-}
-
-fetchDonationProgress();
-</script>
-
 <script src="scripts/preloader.js"></script>
-<script src="scripts/payment.js"></script>
 <script src="scripts/update.js"></script>
 </body>
 </html>
