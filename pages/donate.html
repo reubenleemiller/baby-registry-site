@@ -1,35 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contribute to the Stroller Fund</title>
-  <link href="../assets/style.css" rel="stylesheet">
+  <link href="../assets/style.css" rel="stylesheet" />
   <script src="https://js.stripe.com/v3/"></script>
   <style>
-    .donation-section {
-      padding: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .donation-section form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .donation-section label {
-      font-weight: bold;
-    }
-    .stripe-style {
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    .donation-section form label,
+    .donation-section form input {
+      display: block;
+      margin-bottom: 0.5rem;
       font-size: 1rem;
     }
-    #error-message {
-      color: red;
-      font-weight: bold;
+
+    #email, #firstName, #lastName {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #payment-element {
+      margin: 1rem 0;
     }
   </style>
 </head>
@@ -51,17 +45,18 @@
       <div id="donationDisplay"></div>
 
       <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" name="firstName" required class="stripe-style" />
+      <input type="text" id="firstName" name="firstName" required />
 
       <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="lastName" required class="stripe-style" />
+      <input type="text" id="lastName" name="lastName" required />
 
       <label for="email">Email (for receipt):</label>
-      <input type="email" id="email" name="email" required class="stripe-style" />
+      <input type="email" id="email" name="email" required />
 
       <div id="payment-element"></div>
+
       <button id="submit" class="donate-button">Submit Donation</button>
-      <div id="error-message"></div>
+      <div id="error-message" style="color: red; margin-top: 10px;"></div>
     </form>
   </section>
 
