@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,31 @@
   <title>Contribute to the Stroller Fund</title>
   <link href="../assets/style.css" rel="stylesheet">
   <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    .donation-section {
+      padding: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .donation-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .donation-section label {
+      font-weight: bold;
+    }
+    .stripe-style {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    #error-message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <header>
