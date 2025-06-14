@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    // Call backend to create PaymentIntent
     const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,19 +27,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const { clientSecret } = await res.json();
 
-    // Initialize Stripe.js
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
     elements = stripe.elements({ clientSecret });
 
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
-
   } catch (err) {
     console.error("Stripe init error:", err);
     document.getElementById("error-message").textContent = "Failed to load payment form.";
+    return;
   }
 
-  // Form submission after Stripe is mounted
   document.getElementById("payment-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
