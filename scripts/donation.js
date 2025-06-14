@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const { clientSecret } = await res.json();
 
       if (!stripe) {
-        stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
+        stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu"); // Replace with real publishable key
       }
 
       if (!elements) {
