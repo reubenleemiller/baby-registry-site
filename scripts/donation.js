@@ -4,8 +4,8 @@ let elements;
 window.addEventListener("DOMContentLoaded", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const amount = queryParams.get("amount");
-
   const donationDisplay = document.getElementById("donationDisplay");
+
   if (donationDisplay) {
     donationDisplay.textContent = `Donation Amount: $${amount} CAD`;
   }
@@ -16,14 +16,13 @@ window.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // Get a payment intent from the server immediately when the page loads
   try {
     const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         amount: Number(amount),
-        email: "placeholder@example.com", // required field, even as placeholder
+        email: "placeholder@example.com",
         firstName: "Anonymous",
         lastName: "Donor"
       })
@@ -32,15 +31,12 @@ window.addEventListener("DOMContentLoaded", async () => {
     if (!res.ok) throw new Error("Failed to create payment intent");
     const { clientSecret } = await res.json();
 
-    // Initialize Stripe with publishable key
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
 
-    // Create and mount Stripe Payment Element
     elements = stripe.elements({ clientSecret });
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
 
-    // Handle form submission
     document.getElementById("payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 

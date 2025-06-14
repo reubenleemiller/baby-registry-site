@@ -13,7 +13,6 @@
       margin-bottom: 0.5rem;
       font-size: 1rem;
     }
-
     #email, #firstName, #lastName {
       padding: 0.6rem;
       border: 1px solid #ccc;
@@ -21,7 +20,6 @@
       width: 100%;
       max-width: 400px;
     }
-
     #payment-element {
       margin: 1rem 0;
     }
@@ -46,15 +44,12 @@
 
       <label for="firstName">First Name:</label>
       <input type="text" id="firstName" name="firstName" required />
-
       <label for="lastName">Last Name:</label>
       <input type="text" id="lastName" name="lastName" required />
-
       <label for="email">Email (for receipt):</label>
       <input type="email" id="email" name="email" required />
 
       <div id="payment-element"></div>
-
       <button id="submit" class="donate-button">Submit Donation</button>
       <div id="error-message" style="color: red; margin-top: 10px;"></div>
     </form>
@@ -68,14 +63,12 @@
         const { total } = await res.json();
         const goal = 346.49;
         const percent = Math.min((total / goal) * 100, 100);
-
         document.getElementById('progressBar').style.width = percent + '%';
         document.getElementById('amountText').textContent = `$${total.toFixed(2)} of $${goal} goal`;
       } catch (err) {
         console.error("⚠️ Failed to fetch donation progress:", err.message);
       }
     }
-
     fetchDonationProgress();
   </script>
 </body>
