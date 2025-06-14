@@ -1,7 +1,7 @@
 let stripe;
 let elements;
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const amount = queryParams.get("amount");
 
@@ -16,36 +16,41 @@ window.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  document.getElementById("payment-form").addEventListener("submit", async (e) => {
-    e.preventDefault();
+  // Get a payment intent from the server immediately when the page loads
+  try {
+    const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: Number(amount),
+        email: "placeholder@example.com", // required field, even as placeholder
+        firstName: "Anonymous",
+        lastName: "Donor"
+      })
+    });
 
-    const email = document.getElementById("email").value.trim();
-    const firstName = document.getElementById("firstName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
+    if (!res.ok) throw new Error("Failed to create payment intent");
+    const { clientSecret } = await res.json();
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      document.getElementById("error-message").textContent = "Please enter a valid email address.";
-      return;
-    }
+    // Initialize Stripe with publishable key
+    stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
 
-    try {
-      const res = await fetch("https://baby-registry-backend.vercel.app/api/create-payment-intent", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: Number(amount), email, firstName, lastName })
-      });
+    // Create and mount Stripe Payment Element
+    elements = stripe.elements({ clientSecret });
+    const paymentElement = elements.create("payment");
+    paymentElement.mount("#payment-element");
 
-      if (!res.ok) throw new Error("Failed to create payment intent");
-      const { clientSecret } = await res.json();
+    // Handle form submission
+    document.getElementById("payment-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-      if (!stripe) {
-        stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu"); // Replace with real publishable key
-      }
+      const email = document.getElementById("email").value.trim();
+      const firstName = document.getElementById("firstName").value.trim();
+      const lastName = document.getElementById("lastName").value.trim();
 
-      if (!elements) {
-        elements = stripe.elements({ clientSecret });
-        const paymentElement = elements.create("payment");
-        paymentElement.mount("#payment-element");
+      if (!email || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+        document.getElementById("error-message").textContent = "Please enter a valid email address.";
+        return;
       }
 
       const returnUrl = `${window.location.origin}/baby-registry-site/pages/donation-success.html?amount=${encodeURIComponent(amount)}&name=${encodeURIComponent(firstName + ' ' + lastName)}`;
@@ -61,9 +66,9 @@ window.addEventListener("DOMContentLoaded", () => {
       if (error) {
         document.getElementById("error-message").textContent = error.message;
       }
-    } catch (err) {
-      console.error("Stripe init error:", err);
-      document.getElementById("error-message").textContent = "Failed to load payment form.";
-    }
-  });
+    });
+  } catch (err) {
+    console.error("Stripe setup failed:", err);
+    document.getElementById("error-message").textContent = "Failed to initialize payment form.";
+  }
 });
