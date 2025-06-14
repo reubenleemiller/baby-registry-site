@@ -23,22 +23,23 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const { clientSecret } = await res.json();
 
-    // Initialize Stripe with your publishable key
+    // Initialize Stripe
     stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
-
     elements = stripe.elements({ clientSecret });
 
     const paymentElement = elements.create("payment");
     paymentElement.mount("#payment-element");
 
-    // Handle payment form submission
+    // Handle form submission
     document.querySelector("#payment-form").addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      const base = window.location.origin + window.location.pathname.replace(/\/pages\/donate.html$/, '');
 
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${window.location.origin}/pages/donation-success.html?amount=${amount}`
+          return_url: `${base}/pages/donation-success.html?amount=${amount}`
         }
       });
 
