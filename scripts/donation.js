@@ -44,8 +44,8 @@ window.addEventListener("DOMContentLoaded", async () => {
       const firstName = document.getElementById("firstName").value.trim();
       const lastName = document.getElementById("lastName").value.trim();
 
-      if (!email || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
-        document.getElementById("error-message").textContent = "Please enter a valid email address.";
+      if (!email) {
+        document.getElementById("error-message").textContent = "Please enter your email address.";
         return;
       }
 
