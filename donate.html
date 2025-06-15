@@ -16,19 +16,25 @@
     <p id="progress-text">$0 raised of $500 goal</p>
   </section>
 
-  <section class="donation-section">
-    <form id="payment-form">
-      <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" required />
-      <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName" required />
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
-      <div id="payment-element"><!-- Stripe injects here --></div>
-      <button type="submit" id="submit">Donate</button>
-      <p id="error-message"></p>
-    </form>
-  </section>
+ <section class="donation-section">
+  <form id="payment-form">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName" required />
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <!-- Stripe mounts payment UI here -->
+    <div id="payment-element"></div>
+
+    <button type="submit" id="submit">Donate</button>
+    <p id="error-message"></p>
+  </form>
+</section>
+
 
   <script src="./scripts/donation.js"></script>
 </body>
