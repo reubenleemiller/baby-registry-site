@@ -444,3 +444,6 @@ section > h1 {
   opacity: 1;
   margin-left: 16px;
 }
+.preloader-lock {
+  overflow: hidden;
+}
