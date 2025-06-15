@@ -1,10 +1,11 @@
-    body {
-      margin: 0;
-      font-family: 'Times', serif;
-      background: #f7f9fc;
-      color: #333;
-    }
-    /* Hide main content while locked */
+body {
+  margin: 0;
+  font-family: 'Times', serif;
+  background: #f7f9fc;
+  color: #333;
+}
+
+/* Hide main content while locked */
 body.locked main,
 body:not(.unlocked) main {
   display: none !important;
@@ -22,16 +23,19 @@ body.unlocked .page-content {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-    header {
-      text-align: center;
-      padding: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    .registry {
+
+header {
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.registry {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -41,78 +45,40 @@ body.unlocked .page-content {
   margin: auto;
 }
 
-    .item {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 1rem;
-      transition: transform 0.2s ease;
-      max-width: 150px;
-    }
-    .item:hover {
-      transform: translateY(-4px);
-    }
-    .item iframe, .item img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-    .item a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #1a73e8;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .goal-section {
-      text-align: center;
-      padding: 2rem;
-    }
-    .progress-container {
-      background: #ddd;
-      border-radius: 30px;
-      overflow: hidden;
-      max-width: 600px;
-      margin: 1rem auto;
-    }
-    .progress-bar {
-      height: 30px;
-      width: 0%;
-      background: linear-gradient(to right, #f093fb, #f5576c);
-      transition: width 0.3s ease;
-    }
-    .amount-text {
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-    .donation-input {
-      margin-top: 1rem;
-      padding: 0.6rem;
-      width: 200px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .donate-button {
-      margin-top: 1rem;
-      background: #f5576c;
-      color: white;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .donate-button:hover {
-      background: #e0465a;
-    }
-    .divider {
+.item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+  max-width: 150px;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+}
+
+.item iframe, .item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.item a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.divider {
   border: none;
   height: 2px;
   background-color: #ccc;
   width: 60%;
   margin: 0 auto 2rem auto;
 }
+
 .registry-section {
   padding: 2rem;
 }
@@ -122,11 +88,13 @@ body.unlocked .page-content {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+
 section > h1 {
   text-align: center;
   font-size: 2rem;
   margin-top: 2rem;
 }
+
 /* Switch to grid on small screens */
 @media (max-width: 600px) {
   .registry {
@@ -135,10 +103,11 @@ section > h1 {
   }
 
   .registry .item {
-    width: 100%; /* critical: let grid control the layout */
-    max-width: 100px; /* optional: constrain size */
+    width: 100%;
+    max-width: 100px;
   }
 }
+
 .badge {
   display: inline-block;
   background-color: #d1ffd6;
@@ -149,7 +118,86 @@ section > h1 {
   margin-top: 0.5rem;
 }
 
-    /* Preloader covers entire screen */
+/* 🎯 Donation Section */
+.donation-wrapper {
+  max-width: 500px;
+  margin: 4rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.donation-wrapper h2 {
+  margin-bottom: 1rem;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0%;
+  background-color: #00b894;
+  transition: width 0.5s ease-in-out;
+}
+
+.donation-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.donation-form input[type="number"] {
+  flex: 1 1 140px;
+  max-width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.donation-form input[type="number"]:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 6px rgba(0,112,243,0.2);
+  outline: none;
+}
+
+.donation-form button {
+  flex: 1 1 140px;
+  max-width: 200px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.donation-form button:hover {
+  background-color: #005ad2;
+  transform: translateY(-1px);
+}
+
+.donation-form button:active {
+  background-color: #004ab0;
+  transform: scale(0.98);
+}
+
+/* 🔄 Preloader */
 #site-preloader {
   position: fixed;
   inset: 0;
@@ -168,20 +216,17 @@ section > h1 {
   pointer-events: all;
 }
 
-/* Fade-out transition */
-#site-preloader.hidden{
+#site-preloader.hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-/* Spinner container */
 .preloader-spinner-wrapper {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-/* Spinner animation */
 .custom-spinner div {
   animation: spin 1s linear infinite;
   width: 110px;
@@ -199,7 +244,6 @@ section > h1 {
   100% { transform: rotate(360deg); }
 }
 
-/* Centered logo inside spinner */
 .preloader-logo {
   position: absolute;
   top: 50%;
@@ -210,7 +254,6 @@ section > h1 {
   object-fit: contain;
 }
 
-/* 🌐 Mobile optimization */
 @media (max-width: 600px) {
   .preloader-spinner-wrapper {
     width: 100px;
@@ -229,4 +272,3 @@ section > h1 {
     height: 60px;
   }
 }
-
