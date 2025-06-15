@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  document.documentElement.classList.add('preloader-lock');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baby Registry</title>
@@ -563,7 +566,7 @@
     </div>
   </div>
 </section>
-
+<hr class="divider" />
 <section class="donation-wrapper">
   <h2 class="section-title">Contribute to the Diaper Fund</h2>
 
@@ -582,7 +585,7 @@
       min="1" 
       required 
     />
-    <button id="donate-button">Contribute</button>
+    <button id="donate-button" class="animated-button custom-arrow-button">Contribute</button>
   </div>
 </section>
 <script src="https://js.stripe.com/v3/"></script>

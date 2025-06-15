@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  document.documentElement.classList.add('preloader-lock');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate to the Stroller Fund</title>
@@ -8,6 +11,14 @@
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body class="unlocked">
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
   <section class="donation-goal">
     <h1>Complete Your Contribution</h1>
     <div class="progress-container">
@@ -30,12 +41,11 @@
     <!-- Stripe mounts payment UI here -->
     <div id="payment-element"></div>
 
-    <button type="submit" id="submit">Donate</button>
+    <button type="submit" id="submit" class="animated-button custom-arrow-button">Submit Donation</button>
     <p id="error-message"></p>
   </form>
 </section>
-
-
-  <script src="./scripts/donation.js"></script>
+  <script src="scripts/preloader.js"></script>
+  <script src="scripts/donation.js"></script>
 </body>
 </html>

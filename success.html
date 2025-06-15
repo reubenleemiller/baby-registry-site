@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  document.documentElement.classList.add('preloader-lock');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thank You!</title>
   <link rel="stylesheet" href="./assets/style.css" />
 </head>
-<body>
+<body class="locked">
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
   <section class="donation-goal" style="text-align: center;">
-    <h1>🎉 Thank You for Your Contribution!</h1>
+    <h1>Thank You for Your Contribution!</h1>
     <p>Your generosity brings us one step closer to our stroller fund goal.</p>
     <p>We truly appreciate your support!</p>
+    <!-- Progress Bar -->
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+  <p id="progress-text">$0 raised of $500 goal</p>
     <a href="index.html">
-      <button style="margin-top: 1.5rem;">Return to Registry</button>
+      <button class="animated-button custom-arrow-button" style="margin-top: 1.5rem;">Return to Registry</button>
     </a>
   </section>
+<script src="scripts/preloader.js"></script>
+<script src="scripts/donation.js"></script>
 </body>
 </html>
