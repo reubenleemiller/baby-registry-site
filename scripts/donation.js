@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🔥 donation.js loaded");
 
-  const stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
+  const stripe = Stripe("pk_live_51RZyoqLJf9l8aRwrsX691muLzT1KcLKZWHMU94NPg9v45Cb2fV8aXvcVbUSQS6j6InzuEpTGQRKpYno9tOKYtGhC00HPGZg7uR");
   const backendBaseURL = "https://baby-registry-backend.vercel.app";
 
   const progressBar = document.getElementById("progress-bar");
