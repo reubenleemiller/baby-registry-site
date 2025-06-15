@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const stripe = Stripe("pk_test_51RZyowQ4zF73MCTpzWNzVsHbttIxXSQ6AA77xb0yIeGAIQmAiqGSbO9ZfUZDNa2SQTqdzoSULJEpqUEnc64d6Qvy00tiqrn3Vu");
-
     const backendBaseURL = "https://baby-registry-backend.vercel.app";
 
     const progressBar = document.getElementById("progress-bar");
@@ -51,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ amount })
         });
+
         const { clientSecret } = await res.json();
 
         elements = stripe.elements({ clientSecret });
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const { error } = await stripe.confirmPayment({
           elements,
           confirmParams: {
-            return_url: window.location.origin + "/success.html",
+            return_url: window.location.origin + "/baby-registry-site/success.html",
             receipt_email: email
           }
         });
