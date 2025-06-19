@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  document.documentElement.classList.add('preloader-lock');
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Registry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="assets/style.css" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="assets/logo.png">
+</head>
+<body>
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
+<header>
+<div class="header">
+  <div class="header-logo">
+    <a href="https://rmbabyregistry.me/">
+      <img src="assets/logo.png" class="logo" />
+    </a>
+  </div>
+  <div class="header-text">
+    <h1>Baby Registry</h1>
+    <p style="color: #66c3b7;" class="subtitle">Thank you for helping us prepare for our little one!</p>
+  </div>
+</div>
+<button
+  class="hamburger"
+  onclick="toggleMenu()"
+  aria-expanded="false"
+  aria-controls="nav-menu"
+  aria-label="Toggle menu"
+>
+  ☰
+</button>
+
+<nav id="nav-menu" role="navigation" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="event.html">Event Details</a></li>
+    <li class="has-submenu">
+      <button class="submenu-toggle" onclick="toggleSubmenu(event)" aria-expanded="false" aria-controls="submenu1">
+        Categories
+      </button>
+      <ul id="submenu1" class="submenu" role="menu" aria-hidden="true">
+        <li><a href="index.html#Activity-and-Gear">Activity and Gear</a></li>
+        <li><a href="index.html#Baby-Clothing">Baby Clothing</a></li>
+        <li><a href="index.html#Bathing">Bathing</a></li>
+        <li><a href="index.html#Diapering">Diapering</a></li>
+        <li><a href="index.html#Feeding">Feeding</a></li>
+        <li><a href="index.html#Gifts">Gifts</a></li>
+        <li><a href="index.html#Health-&-Baby-Care">Health & Baby Care</a></li>
+        <li><a href="index.html#Nursery-Bedding-&-Essentials">Nursery Bedding & Essentials</a></li>
+        <li><a href="index.html#Nursery-Furniture">Nursery Furniture</a></li>
+        <li><a href="index.html#Nursing">Nursing</a></li>
+        <li><a href="index.html#Toys-and-Books">Toys and Books</a></li>
+        <li><a href="index.html#Other">Other</a></li>
+      </ul>
+    </li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+</header>
+<div id="content-wrapper">
+<section class="donation-wrapper">
+  <h2 class="section-title">Contribute to the Diaper Fund</h2>
+
+  <!-- Progress Bar -->
+  <div class="progress-container">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+  <p id="progress-text">$0 raised of $500 goal</p>
+
+  <!-- Donation Input + Button -->
+  <div class="donation-form">
+    <input 
+      type="number" 
+      id="donation-amount" 
+      placeholder="Enter Donation" 
+      min="1" 
+      required 
+    />
+    <button id="donate-button" class="animated-button custom-arrow-button">Contribute</button>
+  </div>
+  <div class="footer-payment-icons">
+  <i class="fab fa-cc-visa"></i>
+  <i class="fab fa-cc-mastercard"></i>
+  <i class="fab fa-cc-stripe"></i>
+  </div>
+</section>
+<section class="registry-section">
+  <h1 class="section-title" id="Activity-and-Gear">Activity and Gear</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/714AqorGKBL._AC_SX679_.jpg" alt="Beco Gemini Baby Carrier Newborn to Toddler ">
+      <p>Beco Gemini Baby Carrier Newborn to Toddler </p>
+      <p>$79.99</p>
+      <a href="https://www.amazon.ca/dp/B01B1YPCDS/ref=br_dsk_vv_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1WA7F6959KG0L&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/817x5-C+HCL._AC_SX679_.jpg" alt="Portable Baby Playard and Changing Table">
+      <p>Portable Baby Playard and Changing Table</p>
+      <p>$99.99</p>
+      <a href="https://www.amazon.ca/dp/B08LVD49ZH/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2GDHE48RCI38F" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61BLQt+DYFL._AC_SX679_.jpg" alt="Momcozy Baby Wrap">
+      <p>Momcozy Baby Wrap</p>
+      <p>$39.99</p>
+      <a href="https://www.amazon.ca/dp/B098X8WS7Y/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=ILMQ76UR62LPO&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71h8ss94pZL._AC_SX679_.jpg" alt="Speed Portable Baby Swing">
+      <p>Speed Portable Baby Swing</p>
+      <p>$135.99</p>
+      <a href="https://www.amazon.ca/dp/B017XNL39S/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1FC4ZW5ALQ7J9&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81uQmTEJRAL._AC_SX679_.jpg" alt="Baby Einstein 4-in-1 Kickin' Tunes">
+      <p>Baby Einstein 4-in-1 Kickin' Tunes</p>
+      <p>$69.97</p>
+      <a href="https://www.amazon.ca/dp/B07MPCCDM7/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3KFG8EET2L059" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Baby-Clothing">Baby Clothing</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/51XOKOnSapL._AC_SX679_.jpg" alt="Baby Mittens">
+      <p>Baby Mittens</p>
+      <p>$14.99</p>
+      <a href="https://www.amazon.ca/dp/B08LV354TL/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1YZ4X0WZC21RP&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71N32pkZgNL._AC_SX679_.jpg" alt="Baby Newborn Cotton Hat">
+      <p>Baby Newborn Cotton Hat</p>
+      <p>$14.99</p>
+      <a href="https://www.amazon.ca/dp/B0C89NCN62/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IR6CWKA83JSG6&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/91tUsYWNrSL._AC_SX679_.jpg" alt="Non Skid Anti Slip Cotton Dress Crew Socks">
+      <p>Non Skid Anti Slip Cotton Dress Crew Socks</p>
+      <p>$21.99</p>
+      <a href="https://www.amazon.ca/dp/B0B7HQV5VL/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1NZAXSSJZ0MP9&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71bW1ysY8rL._AC_SX679_.jpg" alt="The Peanutshell Baby Layette Gift Set">
+      <p>The Peanutshell Baby Layette Gift Set</p>
+      <p>$59.99</p>
+      <a href="https://www.amazon.ca/dp/B0BRBS77QT/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3NWGS6P7R09EN&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71gDerHpfZL._AC_SX679_.jpg" alt="Unisex Baby 3-Pack Organic Cotton Snap Footed Sleep and Play Pajamas">
+      <p>Unisex Baby 3-Pack Organic Cotton Snap Footed Sleep and Play Pajamas</p>
+      <p>$39.99</p>
+      <a href="https://www.amazon.ca/dp/B08K8DH6YF/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3JFR7V8IDPJH7&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/91XSkk4dpqL._AC_SY879_.jpg" alt="Simple Joys by Carter's Baby 2-Pack 2-Way Zip Thermal Footed Sleep">
+      <p>Simple Joys by Carter's Baby 2-Pack 2-Way Zip Thermal Footed Sleep</p>
+      <p>$24.7</p>
+      <a href="https://www.amazon.ca/dp/B08G8VBJY5/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2Q8DIWRNQMV1K" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/91q1etzCm+L._AC_SY879_.jpg" alt="Simple Joys by Carter's Unisex-Baby Neutral 2-Pack Cotton">
+      <p>Simple Joys by Carter's Unisex-Baby Neutral 2-Pack Cotton</p>
+      <p>$24.7</p>
+      <a href="https://www.amazon.ca/dp/B07Y2KFCKP/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=ISN4KLMWZACGD&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81c23pu3BAL._AC_SY879_.jpg" alt="Simple Joys by Carter's Baby-Girls 2-Pack Fleece ">
+      <p>Simple Joys by Carter's Baby-Girls 2-Pack Fleece </p>
+      <p>$27.6</p>
+      <a href="https://www.amazon.ca/dp/B07ZPPY28F/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IW64BWZUQ2HL4&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81XesbhPNFL._AC_SY879_.jpg" alt="Simple Joys by Carter's Boys' 6-Pack Short-Sleeve Bodysuit">
+      <p>Simple Joys by Carter's Boys' 6-Pack Short-Sleeve Bodysuit</p>
+      <p>$29.05</p>
+      <a href="https://www.amazon.ca/dp/B0785R9MRV/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I34EK923GFVVI2&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71mPP6l1GML._AC_SX679_.jpg" alt="Unisex Baby Boy Girl Pants Sets Cotton">
+      <p>Unisex Baby Boy Girl Pants Sets Cotton</p>
+      <p>$29.98</p>
+      <a href="https://www.amazon.ca/dp/B0CKN6STH7/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I4HVQO7FPV8XJ&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/718zlaz7GrL._AC_SX679_.jpg" alt="The Peanutshell 5 Pack Baby Boy or Girl Pants Set ">
+      <p>The Peanutshell 5 Pack Baby Boy or Girl Pants Set </p>
+      <p>$27.99</p>
+      <a href="https://www.amazon.ca/dp/B089T75YB8/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I17PT0X4BXVNW6&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81Na4FKm38L._AC_SX679_.jpg" alt="Ruliby Newborn Baby Romper 5 Pack ">
+      <p>Ruliby Newborn Baby Romper 5 Pack </p>
+      <p>$38.99</p>
+      <a href="https://www.amazon.ca/dp/B0CWP31XH1/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I25G5DRZLZETP4&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81ysX51W1pL._AC_SX569_.jpg" alt="Ruliby Baby Bodysuit Boy Girl">
+      <p>Ruliby Baby Bodysuit Boy Girl</p>
+      <p>$19.99</p>
+      <a href="https://www.amazon.ca/dp/B0CTWYTN9R/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1EP1EPNZM274M&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Bathing">Bathing</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81aUQtv2HwL._AC_SX425_.jpg" alt="6 Pack French Soft Books">
+      <p>6 Pack French Soft Books</p>
+      <p>$17.99</p>
+      <a href="https://www.amazon.ca/dp/B0DMW73K27/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I35EYXQOQJYW0R" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71BPrVg9FiL._AC_SX425_.jpg" alt="Baby Bath Toys for Toddlers - 12 pcs Rainbow Stacking Cups">
+      <p>Baby Bath Toys for Toddlers - 12 pcs Rainbow Stacking Cups</p>
+      <p>$20.95</p>
+      <a href="https://www.amazon.ca/dp/B09C9T1X7P/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3IWKLAY9H1OY5" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/51tt+1w58WS._AC_SX425_.jpg" alt="Aveeno Baby Wash and Shampoo - Gentle 2-in-1 Body Wash">
+      <p>Aveeno Baby Wash and Shampoo - Gentle 2-in-1 Body Wash</p>
+      <p>$19.97</p>
+      <a href="https://www.amazon.ca/dp/B07RGLGK5P/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3MRKOD1RHX12N&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/718eEz1BpYL._AC_SX679_.jpg" alt="Betlife Baby Hooded Towel">
+      <p>Betlife Baby Hooded Towel</p>
+      <p>$10.51</p>
+      <a href="https://www.amazon.ca/dp/B09XX6SQZX/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IX7MLPEW93UIG&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81S8s7jYAyL._AC_SX679_.jpg" alt="Baby Washcloths and Burp Cloths">
+      <p>Baby Washcloths and Burp Cloths</p>
+      <p>$13.99</p>
+      <a href="https://www.amazon.ca/dp/B0CDLBR64G/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IED51A13XCD60&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Diapering">Diapering</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/41XUEj1NX5L._AC_SX679_.jpg" alt="Ubbi Steel Diaper Pail, White">
+      <p>Ubbi Steel Diaper Pail, White</p>
+      <p>$126.97</p>
+      <a href="https://www.amazon.ca/dp/B00821FLT4/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2A7Y0XQPBNB8J&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81D4yYUqD2L._AC_SX679_.jpg" alt="Diaper Bag Backpack">
+      <p>Diaper Bag Backpack</p>
+      <p>$59.99</p>
+      <a href="https://www.amazon.ca/dp/B07C3SWZXK/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2AT1N1X2J2Z22&th=1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/611wREV+62L._AC_SX425_.jpg" alt="Baby Healing Ointment for Baby's Sensitive Skin">
+      <p>Baby Healing Ointment for Baby's Sensitive Skin</p>
+      <p>$29.99</p>
+      <a href="https://www.amazon.ca/dp/B0BLSSW16N/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2XA0KEH7DJHLT&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71IMyg0CKwL._AC_SX425_.jpg" alt="Sudocrem - Diaper Rash Cream for Baby">
+      <p>Sudocrem - Diaper Rash Cream for Baby</p>
+      <p>$12.97</p>
+      <a href="https://www.amazon.ca/dp/B006T0OXBM/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I39Z8GL11402PY&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61vUhYocJvL._AC_SX679_.jpg" alt="Pampers Diapers Size 1/Newborn, 198 Count ">
+      <p>Pampers Diapers Size 1/Newborn, 198 Count </p>
+      <p>$32.64</p>
+      <a href="https://www.amazon.ca/dp/B07DCCP3Y1/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3DMKK86QJNPN5&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61+n03kHYOL._AC_SX679_.jpg" alt="Aveeno Baby Lotion Daily Moisturizing">
+      <p>Aveeno Baby Lotion Daily Moisturizing</p>
+      <p>$12.79</p>
+      <a href="https://www.amazon.ca/dp/B00PC5Y02M/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I34Q7HJQPRQKV6" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71gbIUpYmcL._AC_SX679_.jpg" alt="Amazon Elements Baby Wipes">
+      <p>Amazon Elements Baby Wipes</p>
+      <p>$24.99</p>
+      <a href="https://www.amazon.ca/dp/B07H53W5WP/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2VHFQMO4H8WHI" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61twdBcQXmL._AC_SX679_.jpg" alt="Jool Baby Changing Pad ">
+      <p>Jool Baby Changing Pad </p>
+      <p>$64.99</p>
+      <a href="https://www.amazon.ca/dp/B08KHD615K/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2NNKCWP73UTQV&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/812F2X-zLbL._AC_SX679_.jpg" alt="Portable Diaper Changing Pad for Baby">
+      <p>Portable Diaper Changing Pad for Baby</p>
+      <p>$23.39</p>
+      <a href="https://www.amazon.ca/dp/B08N4W4CFC/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I36DFEUBXZZPJH&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Feeding">Feeding</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71SucLOrN5L._AC_SX679_.jpg" alt="Dr. Brown's Deluxe Electric for Baby Bottles and Other Baby Essentials">
+      <p>Dr. Brown's Deluxe Electric for Baby Bottles and Other Baby Essentials</p>
+      <p>$59.97</p>
+      <a href="https://www.amazon.ca/dp/B01E1H95LW/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3QLH9IMQUXPVK&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61Oedts4KSL._AC_SX679_.jpg" alt="Bumbo Multi Seat - Hemlock">
+      <p>Bumbo Multi Seat - Hemlock</p>
+      <p>$73.0</p>
+      <a href="https://www.amazon.ca/dp/B09WF5MMLV/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1CQ3RMUN9E2T6" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/51UkxtfNlPL._AC_SX679_.jpg" alt="PandaEar Silicone Baby Food Fruit Feeder Pacifier">
+      <p>PandaEar Silicone Baby Food Fruit Feeder Pacifier</p>
+      <p>$13.95</p>
+      <a href="https://www.amazon.ca/dp/B09ZQP9J9P/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I901WOJNLRCC2" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/41h1wr3lMjL._AC_.jpg" alt="3-in-1 Baby High Chair,">
+      <p>3-in-1 Baby High Chair,</p>
+      <p>$105.99</p>
+      <a href="https://www.amazon.ca/dp/B08P1B2QR6/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3NHUJLSYEIF62" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/91a8XXv-2OL._AC_SX679_.jpg" alt="8-Pack Organic Baby Bibs for Boys, Girls ">
+      <p>8-Pack Organic Baby Bibs for Boys, Girls </p>
+      <p>$26.96</p>
+      <a href="https://www.amazon.ca/dp/B0BZRFVMQB/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1YXIGXAP8JDV3&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/718smNlx9qL._AC_SX679_.jpg" alt="Maliton Muslin Baby Burp Cloths 6 Pack">
+      <p>Maliton Muslin Baby Burp Cloths 6 Pack</p>
+      <p>$23.99</p>
+      <a href="https://www.amazon.ca/dp/B0BFZF63VR/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I331SOYT8232XO&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81+b3-JVZKL._AC_SX679_.jpg" alt="Dr. Brown's Options+ Narrow Bottle, 4 Ounce/120 ml 4 pack">
+      <p>Dr. Brown's Options+ Narrow Bottle, 4 Ounce/120 ml 4 pack</p>
+      <p>$29.97</p>
+      <a href="https://www.amazon.ca/dp/B01845QGKK/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I25ESO32BLEB3T&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Gifts">Gifts</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61rC91l6ezL._AC_SX679_.jpg" alt="Dr. Brown's Breastmilk Storage Bags 100 Count (Pack of 1), Clear">
+      <p>Dr. Brown's Breastmilk Storage Bags 100 Count (Pack of 1), Clear</p>
+      <p>$21.98</p>
+      <a href="https://www.amazon.ca/dp/B07KGL4NQJ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=ITW5QCL7MZDY4" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/713kDgBwSjL._AC_SX679_.jpg" alt="Baby Monthly Milestone Cards, Jungle Animals Wooden Discs for Baby Photo ">
+      <p>Baby Monthly Milestone Cards, Jungle Animals Wooden Discs for Baby Photo </p>
+      <p>$12.99</p>
+      <a href="https://www.amazon.ca/dp/B0BXXG7TXW/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3MV6KDV5T7UPI&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61viZghNA3L._AC_SX679_.jpg" alt="Baby Hand and Footprint Kit ">
+      <p>Baby Hand and Footprint Kit </p>
+      <p>$31.96</p>
+      <a href="https://www.amazon.ca/dp/B08GLLDSNQ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2CU7Z1GJKDQB4&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Health-&-Baby-Care">Health & Baby Care</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/714ubhztNBL._AC_SX679_.jpg" alt="Philips Avent Soothie Orthodontic Baby Pacifiers">
+      <p>Philips Avent Soothie Orthodontic Baby Pacifiers</p>
+      <p>$11.98</p>
+      <a href="https://www.amazon.ca/dp/B07TDN9MKC/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1WBPQ07HOJ4U&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/611DiC2W+OL._SX522_.jpg" alt="ByFloProducts, Forehead Thermometer">
+      <p>ByFloProducts, Forehead Thermometer</p>
+      <p>$28.99</p>
+      <a href="https://www.amazon.ca/dp/B0CQTQVM98/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I384HABBNGFNDT&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71xetUUrrAL._AC_SX679_.jpg" alt="Baby Car Camera">
+      <p>Baby Car Camera</p>
+      <p>$42.73</p>
+      <a href="https://www.amazon.ca/dp/B098JF6GCZ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2JVQHJ9IQDAA2" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61dxy7HqazL._AC_SX679_.jpg" alt="Dr. Brown’s HappyPaci 100% Silicone ">
+      <p>Dr. Brown’s HappyPaci 100% Silicone </p>
+      <p>$6.97</p>
+      <a href="https://www.amazon.ca/dp/B09XJKHCXZ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3R6ZN626959QD&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71ogfHCmb-L._AC_SX679_.jpg" alt="Baby Grooming Kit - 19 in 1 Nursery Essentials ">
+      <p>Baby Grooming Kit - 19 in 1 Nursery Essentials </p>
+      <p>$21.99</p>
+      <a href="https://www.amazon.ca/dp/B0DZWSXQNM/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3Z99DR92CY1Q&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71gbGIBzunL._AC_SX679_.jpg" alt="Frida Baby NoseFrida Nasal Aspirator">
+      <p>Frida Baby NoseFrida Nasal Aspirator</p>
+      <p>$26.58</p>
+      <a href="https://www.amazon.ca/dp/B00RP0GHBO/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I16B0TL5WIFL8D&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71dMgaLw9fL._AC_SX679_.jpg" alt="BOIFUN 2K Video Baby Monitor WiFi">
+      <p>BOIFUN 2K Video Baby Monitor WiFi</p>
+      <p>$119.99</p>
+      <a href="https://www.amazon.ca/dp/B0DFMCR7KN/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2BP419YVD0HGD&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Nursery-Bedding-&-Essentials">Nursery Bedding & Essentials</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81hym+XJaNL._AC_SX679_.jpg" alt="GLLQUEN BABY Muslin Swaddle Blankets ">
+      <p>GLLQUEN BABY Muslin Swaddle Blankets </p>
+      <p>$34.18</p>
+      <a href="https://www.amazon.ca/dp/B0D5YC9CKH/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I61VG6JEC2C4Z&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81RWTUJ-7+L._AC_SX679_.jpg" alt="Comfort Pack - Size 0-3 months">
+      <p>Comfort Pack - Size 0-3 months</p>
+      <p>$45.46</p>
+      <a href="https://www.amazon.ca/dp/B0CNBPXY72/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3AQJSKXHQJDPL&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/91eHrCGzbtL._AC_SX679_.jpg" alt="HALO 100% Cotton Sleepsack Swaddle">
+      <p>HALO 100% Cotton Sleepsack Swaddle</p>
+      <p>$34.99</p>
+      <a href="https://www.amazon.ca/dp/B08HG4Y6QM/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IELW072XUMVBT&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71ViKUvk3UL._AC_SX679_.jpg" alt="Vibe Bear Premium Pack and Play Mattress Topper ">
+      <p>Vibe Bear Premium Pack and Play Mattress Topper </p>
+      <p>$52.99</p>
+      <a href="https://www.amazon.ca/dp/B0BX52YMP8/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I278GT1HF30THM&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="#Nursery-Furniture">Nursery Furniture</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71EdOoLTs3L._AC_SY879_.jpg" alt="Yecaye 1 Pack Over the Door Organizer">
+      <p>Yecaye 1 Pack Over the Door Organizer</p>
+      <p>$27.99</p>
+      <a href="https://www.amazon.ca/dp/B0BRKRG294/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3KAOLSUJBJE90&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Nursing">Nursing</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71QM8U8b-xL._AC_SX425_.jpg" alt="Momcozy Breast Pump Hands Free Upgraded Mobile Flow ">
+      <p>Momcozy Breast Pump Hands Free Upgraded Mobile Flow </p>
+      <p>$219.99</p>
+      <a href="https://www.amazon.ca/dp/B0DYV3HMXX/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3G8EK6AMZ1GIG&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71Qwxm7NamL._AC_SX679_.jpg" alt="haakaa Manual Breast Pump">
+      <p>haakaa Manual Breast Pump</p>
+      <p>$28.99</p>
+      <a href="https://www.amazon.ca/dp/B07CWK4S5W/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2Q6XNCZNBZTPT" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61V06J5dv4L._AC_SX679_.jpg" alt="Muslin Nursing Cover for Breastfeeding">
+      <p>Muslin Nursing Cover for Breastfeeding</p>
+      <p>$19.99</p>
+      <a href="https://www.amazon.ca/dp/B0DB4G2853/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IXGAEHHYEPUDC&th=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81I2-SQLZgL._AC_SX679_.jpg" alt="Organic Bamboo Nursing Pads - 8 Washable Breastfeeding Pads">
+      <p>Organic Bamboo Nursing Pads - 8 Washable Breastfeeding Pads</p>
+      <p>$19.96</p>
+      <a href="https://www.amazon.ca/dp/B0BFWF67WZ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1YI2QU7KA3W5N&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/819Nla0CjfL._AC_SX679_.jpg" alt="Dr. Brown's Manual Breast Pump with SoftShape ">
+      <p>Dr. Brown's Manual Breast Pump with SoftShape </p>
+      <p>$34.97</p>
+      <a href="https://www.amazon.ca/dp/B08B2BYL94/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I16KY5QX7N06JI" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Toys-and-Books">Toys and Books</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71gQjiZz2fL._AC_SX425_.jpg" alt="Baby GUND Lil’ Luvs Collection">
+      <p>Baby GUND Lil’ Luvs Collection</p>
+      <p>$25.12</p>
+      <a href="https://www.amazon.ca/dp/B09QH5FYQB/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3I40CKRDX2MK1&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/714uqbQklgL._AC_SX425_.jpg" alt="Baby Musical Toys 6-12 Months">
+      <p>Baby Musical Toys 6-12 Months</p>
+      <p>$22.99</p>
+      <a href="https://www.amazon.ca/dp/B0CNGKSF7L/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IDHTGPTCTIL35&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61yaCQ7qDNL._SY342_.jpg" alt="The Three Little Pigs - Les Trois Petits Cochons">
+      <p>The Three Little Pigs - Les Trois Petits Cochons</p>
+      <p>$12.99</p>
+      <a href="https://www.amazon.ca/dp/1915963982/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IJDOO32YJAVAE&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71-bikaxeeL._SY342_.jpg" alt="Dix petits orteils">
+      <p>Dix petits orteils</p>
+      <p>$11.99</p>
+      <a href="https://www.amazon.ca/dp/1443136956/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I31U877A7UVEV&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71Sgbg4bZSL._SY342_.jpg" alt="My First 100 Library: Boxset of 5 Early Learning Board Books">
+      <p>My First 100 Library: Boxset of 5 Early Learning Board Books</p>
+      <p>$34.99</p>
+      <a href="https://www.amazon.ca/dp/9354402739/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1SMSLSGYBDFUZ&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61eAUAOQXxL._AC_SX425_.jpg" alt="Baby Spiral Plush Toys">
+      <p>Baby Spiral Plush Toys</p>
+      <p>$24.99</p>
+      <a href="https://www.amazon.ca/dp/B093L6TWYP/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2FGWZ40EKK26M&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/514vujHhWeL._AC_SX679_.jpg" alt="Skip Hop Baby Stroller Toy, Farmstand Avocado">
+      <p>Skip Hop Baby Stroller Toy, Farmstand Avocado</p>
+      <p>$9.9</p>
+      <a href="https://www.amazon.ca/dp/B07DG4DVSN/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1S385BUYQ7OXK&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71bytzXIq8L._AC_SX425_.jpg" alt="VTech Animal Rhymes Music Book">
+      <p>VTech Animal Rhymes Music Book</p>
+      <p>$18.67</p>
+      <a href="https://www.amazon.ca/dp/B0991SKD35/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I20R6FFEMV53YZ&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61xk7AMMIYL._AC_SX425_.jpg" alt="Battat – Cause-And-Effect Toy – Developmental Toy With Buttons & Colors ">
+      <p>Battat – Cause-And-Effect Toy – Developmental Toy With Buttons & Colors </p>
+      <p>$18.62</p>
+      <a href="https://www.amazon.ca/dp/B01N25KELS/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2QL3R585VJFG8&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61gg-o7oPML._AC_SX679_.jpg" alt="Fisher-Price Classic Infant Trio, toy ">
+      <p>Fisher-Price Classic Infant Trio, toy </p>
+      <p>$39.97</p>
+      <a href="https://www.amazon.ca/dp/B07JGTNRFK/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IRDKVLH5ROHHQ&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81OcKm1MXQL._AC_SX679_.jpg" alt="Bright Starts Oball Easy-Grasp Rattle">
+      <p>Bright Starts Oball Easy-Grasp Rattle</p>
+      <p>$7.99</p>
+      <a href="https://www.amazon.ca/dp/B0772WYFPP/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I4CC64HB3MKGK&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61zE6KTtFzS._AC_SX679_.jpg" alt="Baby Teething Toys">
+      <p>Baby Teething Toys</p>
+      <p>$13.49</p>
+      <a href="https://www.amazon.ca/dp/B0986RW9L6/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I2238RS61BKSMO&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+  <h1 class="section-title" id="Other">Other</h1>
+  <hr class="divider" />
+  <div class="registry">
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71COJxHH1cL._AC_SX425_.jpg" alt="Lansinoh HPA Lanolin Nipple Cream,">
+      <p>Lansinoh HPA Lanolin Nipple Cream,</p>
+      <p>$12.97</p>
+      <a href="https://www.amazon.ca/dp/B00BLA3EPQ/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1WXEZO8QKEHAN&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61uRNZWerpL._AC_SY450_.jpg" alt="BioGaia Probiotic Baby Drops 5mL">
+      <p>BioGaia Probiotic Baby Drops 5mL</p>
+      <p>$28.99</p>
+      <a href="https://www.amazon.ca/dp/B09HV6VS38/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3BHSJHUFIM8HK" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/813vC+fZI1L._AC_SX425_.jpg" alt="Organic Baby Ddrops 400 IU 90 drops ">
+      <p>Organic Baby Ddrops 400 IU 90 drops </p>
+      <p>$13.47</p>
+      <a href="https://www.amazon.ca/dp/B00CORNHKW/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1TM6B79T5YGNK&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/71S0sxsIxSL._AC_SX425_.jpg" alt="Tylenol Infant Fever">
+      <p>Tylenol Infant Fever</p>
+      <p>$9.77</p>
+      <a href="https://www.amazon.ca/dp/B003M5NFHA/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IV05F51J2SYH4&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61ImLymqU+L._AC_SX679_.jpg" alt="Baby BathTub, 4-in-1 Newborn to Toddler Tub">
+      <p>Baby BathTub, 4-in-1 Newborn to Toddler Tub</p>
+      <p>$69.89</p>
+      <a href="https://www.amazon.ca/dp/B0BVF15FK1/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I306BZRRMEOAPP&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61ZGyjIIy0L._AC_SX679_.jpg" alt="Fisher-Price 3-in-1 Spin & Sort">
+      <p>Fisher-Price 3-in-1 Spin & Sort</p>
+      <p>$89.99</p>
+      <a href="https://www.amazon.ca/dp/B081SKT6J9/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I1WPX9FWFSG64I&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61kZADA6+KL._SY342_.jpg" alt="Je t'aime de la tête aux pieds">
+      <p>Je t'aime de la tête aux pieds</p>
+      <p>$14.99</p>
+      <a href="https://www.amazon.ca/dp/0545992060/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I5WY3GNUDWX2Q&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61wnyDcxtNL._AC_SX679_.jpg" alt="PandaEar 7 Pack Silicone Baby Feeding Spoon">
+      <p>PandaEar 7 Pack Silicone Baby Feeding Spoon</p>
+      <p>$11.95</p>
+      <a href="https://www.amazon.ca/dp/B0C2V17HWW/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3N1XY92NCGMOG" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/61UoADnUBoL._AC_SX679_.jpg" alt="Toddler Plates 3 Pack ">
+      <p>Toddler Plates 3 Pack </p>
+      <p>$18.69</p>
+      <a href="https://www.amazon.ca/dp/B0C5HT5D64/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=I3EQZ3MTUMDFZN" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/81Ye9Ei7-DL._AC_SX679_.jpg" alt="KeaBabies 2-Pack Organic Crib Sheets for Boys, Girls ">
+      <p>KeaBabies 2-Pack Organic Crib Sheets for Boys, Girls </p>
+      <p>$34.96</p>
+      <a href="https://www.amazon.ca/dp/B0BRXRB4R7/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IVOK5N5OYJBWH&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+    <div class="item">
+      <img src="https://m.media-amazon.com/images/I/51ucOJZmXsL._AC_SX679_.jpg" alt="American Baby Printed 100% Natural Cotton Jersey Knit Fitted Pack N Play Playard Sheet,">
+      <p>American Baby Printed 100% Natural Cotton Jersey Knit Fitted Pack N Play Playard Sheet,</p>
+      <p>$12.54</p>
+      <a href="https://www.amazon.ca/dp/B075QF17BH/ref=br_dsk_yr_itemdt_dp?colid=20LMA6EZHZ9G8&coliid=IS45WPRWN0Z77&psc=1" target="_blank">View & Buy on Amazon</a>
+    </div>
+  </div>
+</section>
+</div>
+<script src="scripts/preloader.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="scripts/donation.js"></script>
+<script src="scripts/update.js"></script>
+<script src="scripts/nav.js"></script>
+</body>
+</html>

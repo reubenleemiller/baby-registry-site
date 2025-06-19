@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "micro": "^9.3.4",
+    "stripe": "^18.2.1"
+  }
+}
