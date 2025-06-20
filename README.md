@@ -84,3 +84,39 @@ function createResponse(obj) {
     .setMimeType(ContentService.MimeType.JSON);
 }
 ```
+
+Codebase Also Makes Use of a Script which Reads Info in a GSheet with Headers Marked as Follows: 
+A, B, C, D, E, F, G
+Item, Name,	Link,	Image,	Price,	Purchased,	Category,	Amazon Title
+where the E columns must list either TRUE or FALSE based on whether the item has been purchased, one may also use checkboxes
+
+```
+function updatePurchasedFromEmail() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const threads = GmailApp.search('from:registry-update@amazon.ca newer_than:7d');
+  const messages = GmailApp.getMessagesForThreads(threads).flat();
+
+  const items = sheet.getRange(2, 1, sheet.getLastRow() - 1, 1).getValues().flat(); // Display name
+  const amazonTitles = sheet.getRange(2, 7, sheet.getLastRow() - 1, 1).getValues().flat(); // Amazon Title
+
+  messages.forEach(msg => {
+    const body = msg.getPlainBody().toLowerCase();
+
+    amazonTitles.forEach((amazonTitle, index) => {
+      if (!amazonTitle) return;
+
+      const cleanedBody = body.replace(/\s+/g, ' ').trim();
+      const cleanedTitle = amazonTitle.toLowerCase().replace(/\s+/g, ' ').trim();
+
+      // Strict exact match (not just includes)
+      const isExactMatch = cleanedBody.split('\n').some(line => line.trim() === cleanedTitle);
+
+      if (isExactMatch) {
+        sheet.getRange(index + 2, 5).setValue("TRUE");
+      }
+    });
+  });
+}
+```
+
+The user then sets a time-based trigger, I set it to trigger once per hour.
