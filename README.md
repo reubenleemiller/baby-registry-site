@@ -2,6 +2,7 @@ BABY REGISTRY SITE LOCATED at https://rmbabyregistry.me
 
 Note for Future Use: Google Apps Script with/ Anyone Can Run Access must be listed for rsvp.js to work properly and structured such that the data is pasted in cells A2:E100:
 
+```
 function doGet() {
   return ContentService.createTextOutput("✅ Web App is active and ready for POST submissions.")
     .setMimeType(ContentService.MimeType.TEXT);
@@ -82,4 +83,4 @@ function createResponse(obj) {
     .createTextOutput(JSON.stringify(obj))
     .setMimeType(ContentService.MimeType.JSON);
 }
-
+```
