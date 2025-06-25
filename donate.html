@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  document.documentElement.classList.add('preloader-lock');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate to the Stroller Fund</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="icon" type="image/x-icon" href="assets/logo.png">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body class="unlocked">
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
+<header>
+<div class="header">
+  <div class="header-logo">
+    <a href="https://rmbabyregistry.me/">
+      <img src="assets/logo.png" class="logo" />
+    </a>
+  </div>
+  <div class="header-text">
+    <h1>Baby Registry</h1>
+    <p style="color: #66c3b7;" class="subtitle">Thank you for helping us prepare for our little one!</p>
+  </div>
+</div>
+<button
+  class="hamburger"
+  onclick="toggleMenu()"
+  aria-expanded="false"
+  aria-controls="nav-menu"
+  aria-label="Toggle menu"
+>
+  ☰
+</button>
+
+<nav id="nav-menu" role="navigation" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="event.html">Event Details</a></li>
+    <li class="has-submenu">
+      <button class="submenu-toggle" onclick="toggleSubmenu(event)" aria-expanded="false" aria-controls="submenu1">
+        Categories
+      </button>
+      <ul id="submenu1" class="submenu" role="menu" aria-hidden="true">
+        <li><a href="index.html#Activity-and-Gear">Activity and Gear</a></li>
+        <li><a href="index.html#Baby-Clothing">Baby Clothing</a></li>
+        <li><a href="index.html#Bathing">Bathing</a></li>
+        <li><a href="index.html#Diapering">Diapering</a></li>
+        <li><a href="index.html#Feeding">Feeding</a></li>
+        <li><a href="index.html#Gifts">Gifts</a></li>
+        <li><a href="index.html#Health-&-Baby-Care">Health & Baby Care</a></li>
+        <li><a href="index.html#Nursery-Bedding-&-Essentials">Nursery Bedding & Essentials</a></li>
+        <li><a href="index.html#Nursery-Furniture">Nursery Furniture</a></li>
+        <li><a href="index.html#Nursing">Nursing</a></li>
+        <li><a href="index.html#Toys-and-Books">Toys and Books</a></li>
+        <li><a href="index.html#Other">Other</a></li>
+      </ul>
+    </li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+</header>
+  <section class="donation-goal">
+    <h1>Complete Your Contribution</h1>
+    <div class="progress-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+    <p id="progress-text">$0 raised of $500 goal</p>
+  </section>
+<section class="donation-section">
+<form id="payment-form">
+  <input type="text" id="firstName" placeholder="First Name" required />
+  <input type="text" id="lastName" placeholder="Last Name" required />
+  <input type="email" id="email" placeholder="Email Address" required />
+  
+  <div id="payment-element"></div>
+
+  <button type="submit" id="submit" class="custom-arrow-button">Pay Now</button>
+  <div id="error-message"></div>
+</form>
+</section>
+  <script src="scripts/preloader.js"></script>
+  <script src="scripts/donation.js"></script>
+  <script src="scripts/nav.js"></script>
+</body>
+</html>

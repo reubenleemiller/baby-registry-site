@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20250802T200000Z
+DTEND:20250802T220000Z
+DTSTAMP:20250420T000000Z
+SUMMARY:Rebecca and Reuben's Baby Shower
+LOCATION:8 Keast Way, Red Deer, AB T4P 4A3, Canada
+DESCRIPTION:You're invited to celebrate Rebecca and Reuben and their growing family!\n\nWhat: Baby Shower\nDate: Saturday, August 2, 2025\nTime: 2:00 PM – 4:00 PM (MDT)\n\nJoin us for an afternoon of snacks, games, laughter, and a whole lot of love as we gather to celebrate together.\n\nWe will meet at the outdoor pavilion by the chapel, weather permitting. In the event of rain, we will instead gather inside the building.\n\nRegistry: https://rmbabyshower.me
+END:VEVENT
+END:VCALENDAR

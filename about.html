@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="assets/style.css" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="assets/logo.png">
+</head>
+<body class="locked">
+<div id="site-preloader" class="">
+  <div class="preloader-spinner-wrapper">
+    <div class="custom-spinner">
+      <div></div>
+    </div>
+    <img src="assets/logo.png" class="preloader-logo" />
+  </div>
+</div>
+<header>
+<div class="header">
+  <div class="header-logo">
+    <a href="https://rmbabyregistry.me/">
+      <img src="assets/logo.png" class="logo" />
+    </a>
+  </div>
+  <div class="header-text">
+    <h1>Baby Registry</h1>
+    <p style="color: #66c3b7;" class="subtitle">Thank you for helping us prepare for our little one!</p>
+  </div>
+</div>
+<button
+  class="hamburger"
+  onclick="toggleMenu()"
+  aria-expanded="false"
+  aria-controls="nav-menu"
+  aria-label="Toggle menu"
+>
+  ☰
+</button>
+
+<nav id="nav-menu" role="navigation" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="event.html">Event Details</a></li>
+    <li class="has-submenu">
+      <button class="submenu-toggle" onclick="toggleSubmenu(event)" aria-expanded="false" aria-controls="submenu1">
+        Categories
+      </button>
+      <ul id="submenu1" class="submenu" role="menu" aria-hidden="true">
+        <li><a href="index.html#Activity-and-Gear">Activity and Gear</a></li>
+        <li><a href="index.html#Baby-Clothing">Baby Clothing</a></li>
+        <li><a href="index.html#Bathing">Bathing</a></li>
+        <li><a href="index.html#Diapering">Diapering</a></li>
+        <li><a href="index.html#Feeding">Feeding</a></li>
+        <li><a href="index.html#Gifts">Gifts</a></li>
+        <li><a href="index.html#Health-&-Baby-Care">Health & Baby Care</a></li>
+        <li><a href="index.html#Nursery-Bedding-&-Essentials">Nursery Bedding & Essentials</a></li>
+        <li><a href="index.html#Nursery-Furniture">Nursery Furniture</a></li>
+        <li><a href="index.html#Nursing">Nursing</a></li>
+        <li><a href="index.html#Toys-and-Books">Toys and Books</a></li>
+        <li><a href="index.html#Other">Other</a></li>
+      </ul>
+    </li>
+    <li><a href="rsvp.html">RSVP</a></li>
+  </ul>
+</nav>
+</header>
+<main>
+  <div class="container">
+    <h1>About Us</h1>
+
+    <p>Hello, friends and family!</p>
+
+    <p>We’re excited to share that we’re expecting a little one this September and can’t wait to start this new chapter of our lives. As we prepare for our baby’s arrival, we’ve created this registry to help us gather the essentials we’ll need as we welcome our bundle of joy into the world.</p>
+
+    <p>We are so grateful for your love and support during this special time, and your presence in our lives already means the world to us. Whether you’re helping us build our baby’s first library, picking out adorable outfits, or contributing to the essentials, your generosity makes a huge difference.</p>
+
+    <p>Thank you from the bottom of our hearts for being part of this wonderful journey. We can’t wait to introduce our little one to all of you!</p>
+
+    <p class="signature">With love,<br>Reuben, Rebecca and Baby Miller</p>
+
+    <div class="photo">
+      <img src="assets/baby-pic.jpg" alt="Reuben and Rebecca holding Ultrasound photos" />
+    </div>
+  </div>
+</main>
+<script src="scripts/preloader.js"></script>
+<script src="scripts/nav.js"></script>
+</body>
+</html>
